@@ -21,7 +21,7 @@ Fix "Illegal instruction" error:
 * numpy version 1.20.3
 * pandas version 1.2
 
-Worked for me. 
+Worked for me.
 
 ## For server setup
 
@@ -29,3 +29,13 @@ I followed this instruction to run the app on
 a server:
 
 https://www.techcoil.com/blog/how-to-deploy-python-3-flask-application-on-raspberry-pi-3-with-raspbian-stretch-lite-nginx-supervisor-virtualenv-and-gunicorn/
+
+Note: For gunicorn to work with dash you need to enter `server` instead
+of `app`.
+
+You can simply test this by running in the root directory with the active virtualenv
+the following command: 
+
+```
+gunicorn -b :8000 src:server
+```
